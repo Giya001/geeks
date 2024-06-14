@@ -17,7 +17,7 @@ class IsAdmin(BoundFilter):
 class IsLetter(BoundFilter):
     async def check(self, message: types.Message) -> bool:
         for letter in message.text:
-            if isalpha(letter):
+            if letter.isalpha():
                 return True
 
         return False
